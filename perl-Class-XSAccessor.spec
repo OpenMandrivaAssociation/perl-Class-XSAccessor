@@ -1,6 +1,6 @@
 
 %define realname   Class-XSAccessor
-%define version    0.14
+%define version    1.01
 %define release    %mkrel 1
 
 Name:       perl-%{realname}
