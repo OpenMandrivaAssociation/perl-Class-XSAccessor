@@ -1,21 +1,19 @@
+%define upstream_name    Class-XSAccessor
+%define upstream_version 1.03
 
-%define realname   Class-XSAccessor
-%define version    1.02
-%define release    %mkrel 1
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
+License:    GPL+ or Artistic
 Group:      Development/Perl
 Summary:    Generate fast XS accessors without runtime compilation
-Source:     http://www.cpan.org/modules/by-module/Class/%{realname}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: perl-devel
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Class/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl(AutoXS::Header)
-
-
+BuildRequires: perl-devel
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Class::XSAccessor implements fast read, write and read/write accessors in
@@ -37,7 +35,7 @@ perl code:
   }
 
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -58,5 +56,3 @@ rm -rf %buildroot
 %doc Changes README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
-
