@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 
 License:    GPL+ or Artistic
 Group:      Development/Perl
@@ -13,7 +13,11 @@ Source0:    http://www.cpan.org/modules/by-module/Class/%{upstream_name}-%{upstr
 
 BuildRequires: perl(AutoXS::Header)
 BuildRequires: perl-devel
+
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+
+Obsoletes: perl-Class-XSAccessor-Array
+Provides:  perl-Class-XSAccessor-Array
 
 %description
 Class::XSAccessor implements fast read, write and read/write accessors in
@@ -42,7 +46,7 @@ perl code:
 %make
 
 %check
-make test
+%make test
 
 %install
 rm -rf %buildroot
