@@ -5,6 +5,8 @@
 %define __noautoreq 'perl\\(Class::XSAccessor::Heavy\\)'
 %endif
 
+%define debug_package %{nil}
+
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
 Release:	1
