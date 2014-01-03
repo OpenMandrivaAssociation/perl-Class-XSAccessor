@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 
 %define upstream_name Class-XSAccessor
-%define upstream_version 1.14
+%define upstream_version 1.16
 
 %if %{_use_internal_dependency_generator}
 %define __noautoreq 'perl\\(Class::XSAccessor::Heavy\\)'
@@ -10,11 +10,11 @@
 Summary:	Generate fast XS accessors without runtime compilation
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Class/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Class/Class-XSAccessor-%{upstream_version}.tar.gz
 BuildRequires:	perl(AutoXS::Header)
 BuildRequires:	perl-devel
 Provides:	perl-Class-XSAccessor-Array = %{version}-%{release}
@@ -55,4 +55,5 @@ perl code:
 %doc Changes README META.yml
 %{perl_vendorlib}/*
 %{_mandir}/man3/*
+
 
