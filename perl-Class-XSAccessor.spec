@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 
 %define upstream_name Class-XSAccessor
-%define upstream_version 1.16
+%define upstream_version 1.19
 
 %if %{_use_internal_dependency_generator}
 %define __noautoreq 'perl\\(Class::XSAccessor::Heavy\\)'
@@ -55,5 +55,6 @@ perl code:
 %doc Changes README META.yml
 %{perl_vendorlib}/*
 %{_mandir}/man3/*
+
 
 
