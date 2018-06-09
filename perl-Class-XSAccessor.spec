@@ -16,8 +16,10 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Class/Class-XSAccessor-%{upstream_version}.tar.gz
 BuildRequires:	perl(AutoXS::Header)
-BuildRequires:	perl(Test::More)
 BuildRequires:	perl-devel
+# For tests
+BuildRequires:	perl(Test::More)
+BuildRequires:	perl(Time::HiRes)
 Provides:	perl-Class-XSAccessor-Array = %{version}-%{release}
 
 %description
