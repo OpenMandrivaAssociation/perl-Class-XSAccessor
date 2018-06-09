@@ -10,12 +10,13 @@
 Summary:	Generate fast XS accessors without runtime compilation
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	7
+Release:	8
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Class/Class-XSAccessor-%{upstream_version}.tar.gz
 BuildRequires:	perl(AutoXS::Header)
+BuildRequires:	perl(Test::More)
 BuildRequires:	perl-devel
 Provides:	perl-Class-XSAccessor-Array = %{version}-%{release}
 
@@ -50,11 +51,11 @@ perl code:
 
 %install
 %makeinstall_std
+chmod 0755 %{buildroot}%{perl_vendorarch}/auto/Class/XSAccessor/XSAccessor.so
 
 %files
 %doc Changes README META.yml
-%{perl_vendorlib}/*
+%{perl_vendorarch}/auto/Class/XSAccessor
+%{perl_vendorarch}/Class/XSAccessor
+%{perl_vendorarch}/Class/XSAccessor.pm
 %{_mandir}/man3/*
-
-
-
