@@ -21,6 +21,7 @@ BuildRequires:	perl-devel
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl(Time::HiRes)
 Provides:	perl-Class-XSAccessor-Array = %{version}-%{release}
+Provides:	perl(Class::XSAccessor::Heavy) = %{EVRD}
 
 %description
 Class::XSAccessor implements fast read, write and read/write accessors in
