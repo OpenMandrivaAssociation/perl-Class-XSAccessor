@@ -1,5 +1,3 @@
-%define debug_package %{nil}
-
 %define upstream_name Class-XSAccessor
 %define upstream_version 1.19
 
@@ -43,17 +41,17 @@ perl code:
   }
 
 %prep
-%setup -qn %{upstream_name}-%{upstream_version}
+%autosetup -n %{upstream_name}-%{upstream_version} -p1
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor
-%make
+perl Makefile.PL INSTALLDIRS=vendor
+%make_build
 
 %check
 %make test
 
 %install
-%makeinstall_std
+%make_install
 chmod 0755 %{buildroot}%{perl_vendorarch}/auto/Class/XSAccessor/XSAccessor.so
 
 %files
@@ -61,4 +59,4 @@ chmod 0755 %{buildroot}%{perl_vendorarch}/auto/Class/XSAccessor/XSAccessor.so
 %{perl_vendorarch}/auto/Class/XSAccessor
 %{perl_vendorarch}/Class/XSAccessor
 %{perl_vendorarch}/Class/XSAccessor.pm
-%{_mandir}/man3/*
+%doc %{_mandir}/man3/*
