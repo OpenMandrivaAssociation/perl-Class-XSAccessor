@@ -14,7 +14,7 @@ Version:	%perl_convert_version %{upstream_version}
 Release:	12
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Class/Class-XSAccessor-%{upstream_version}.tar.gz
 BuildRequires:	perl(AutoXS::Header)
 BuildRequires:	perl-devel
