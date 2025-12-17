@@ -11,7 +11,7 @@
 Summary:	Generate fast XS accessors without runtime compilation
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	12
+Release:	13
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://search.cpan.org/dist/%{upstream_name}
