@@ -2,20 +2,18 @@
 %global _empty_manifest_terminate_build 0
 
 %define upstream_name Class-XSAccessor
-%define upstream_version 1.19
-
 %if %{_use_internal_dependency_generator}
 %define __noautoreq 'perl\\(Class::XSAccessor::Heavy\\)'
 %endif
 
 Summary:	Generate fast XS accessors without runtime compilation
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	15
+Version:	1.19
+Release:	16
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/tsee/Class-XSAccessor
-Source0:	https://cpan.metacpan.org/authors/id/S/SM/SMUELLER/Class-XSAccessor-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/S/SM/SMUELLER/Class-XSAccessor-%{version}.tar.gz
 BuildRequires:	make
 BuildRequires:	perl(AutoXS::Header)
 BuildRequires:	perl-devel
@@ -45,7 +43,7 @@ perl code:
   }
 
 %prep
-%autosetup -n %{upstream_name}-%{upstream_version} -p1
+%autosetup -n %{upstream_name}-%{version} -p1
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
